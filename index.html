@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="settings-button">Настройки</button>
+
+    <div id="settings-panel" class="settings-panel">
+        <h2>Настройки</h2>
+        <ul>
+            <li><a href="graphics.html">Графические редакторы</a></li>
+            <li><button id="editors-link">Редакторы</button></li>
+            <li id="language-settings">
+                <button id="language-button">Язык</button>
+                <ul id="language-options" class="hidden">
+                    <li><button data-lang="ru">Русский</button></li>
+                    <li><button data-lang="uk">Українська</button></li>
+                    <li><button data-lang="en">English</button></li>
+                    <li><button data-lang="ar">عربي</button></li>
+                </ul>
+            </li>
+        </ul>
+        <button id="close-settings-button">Закрыть</button>
+    </div>
+    <div class="floating-figure figure-1"></div>
+    <div class="floating-figure figure-2"></div>
+    <div class="floating-figure figure-3"></div>
+    <div id="warning-container">
+        <p id="warning-text">Внимание! Этот сайт содержит важную информацию.</p>
+    </div>
+    <div id="tools-page">
+        <h1>Инструменты</h1>
+        <div class="tools-container">
+            <a href="https://docs.google.com/" target="_blank">
+                <button class="tool-button documents">
+                    <img src="images/blue_document_icon.png" alt="Документы">
+                    <span>Документы</span>
+                </button>
+            </a>
+            <a href="https://slides.google.com/" target="_blank">
+                <button class="tool-button presentations">
+                    <img src="images/yellow_presentation_icon.png" alt="Презентации">
+                    <span>Презентации</span>
+                </button>
+            </a>
+            <a href="https://sheets.google.com/" target="_blank">
+                <button class="tool-button tables">
+                    <img src="images/green_table_icon.png" alt="Таблицы">
+                    <span>Таблицы</span>
+                </button>
+            </a>
+            <a href="https://translate.google.com/" target="_blank">
+                <button class="tool-button translator">
+                    <img src="images/translate_logo.png" alt="Переводчик">
+                    <span>Переводчик</span>
+                </button>
+            </a>
+        </div>
+        <div class="bottom-links">
+            <button id="editors-button">Редакторы</button>
+            <a href="graphics.html">
+                <button id="graphics-editors-button">Графические редакторы</button>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
