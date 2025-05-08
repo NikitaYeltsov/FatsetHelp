@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="registration-container">
+        <h1>Регистрация</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Подтвердите пароль:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="register-button">Зарегистрироваться</button>
+            <p class="login-link">Уже есть аккаунт? <a href="#">Войти</a></p>
+        </form>
+        <div id="registration-message" class="hidden"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationForm = document.getElementById('registration-form');
+            const registrationMessage = document.getElementById('registration-message');
+            const registrationContainer = document.querySelector('.registration-container');
+
+            registrationForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+                const username = document.getElementById('username').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+
+                if (password !== confirmPassword) {
+                    registrationMessage.textContent = 'Пароли не совпадают.';
+                    registrationMessage.classList.remove('hidden', 'success');
+                    registrationMessage.classList.add('error');
+                    return;
+                }
+
+                // Здесь должна быть ваша реальная логика регистрации на сервере
+                // В этом простом примере мы имитируем успешную регистрацию через 2 секунды
+
+                registrationMessage.textContent = 'Регистрация прошла успешно!';
+                registrationMessage.classList.remove('hidden', 'error');
+                registrationMessage.classList.add('success');
+                registrationContainer.classList.add('fade-out'); // Добавляем класс для анимации исчезновения
+
+                setTimeout(function() {
+                    window.location.href = 'index.html'; // Перенаправляем на главную страницу
+                }, 2000); // Задержка перед перенаправлением (соответствует длительности анимации)
+            });
+        });
+    </script>
+</body>
+</html>
