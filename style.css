@@ -68,7 +68,7 @@ body {
 
 .settings-panel ul li a,
 .settings-panel ul li button {
-    display: block;
+    display: inline-block; /* Изменяем на inline-block, чтобы ширина подстраивалась под контент */
     padding: 8px 15px;
     text-decoration: none;
     color: #007bff;
@@ -77,8 +77,10 @@ body {
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    width: 100%;
+    width: auto; /* Автоматическая ширина по содержимому */
     text-align: left;
+    margin-right: 5px; /* Небольшой отступ справа, если нужно */
+    margin-bottom: 5px; /* Небольшой отступ снизу для нескольких кнопок */
 }
 
 .settings-panel ul li a:hover,
